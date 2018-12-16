@@ -4,13 +4,15 @@
   "description": "A backend server for a mentis blog webapp",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js --exec 'npm run lint && node'",
+    "start": "nodemon src/server.js --exec 'npm run lint && babel-node'",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "test"
   },
   "author": "Nicolás Salas V.",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
