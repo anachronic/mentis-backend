@@ -1,15 +1,16 @@
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
+import bodyParser from 'body-parser'
 
 import routes from './routes'
 import db from './db'
 
 const server = express()
-const logger = morgan('tiny')
 
 server.use(cors())
-server.use(logger)
+server.use(morgan('tiny'))
+server.use(bodyParser.json())
 
 routes(server)
 
