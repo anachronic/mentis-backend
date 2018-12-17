@@ -4,7 +4,7 @@
   "description": "A backend server for a mentis blog webapp",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js --exec 'npm run lint && babel-node'",
+    "start": "nodemon server.js --exec 'npm run lint && babel-node --inspect'",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "test"
   },
@@ -24,6 +24,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "mongoose": "^5.4.0",
     "morgan": "^1.9.1"
   }
 }
