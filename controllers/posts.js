@@ -7,5 +7,17 @@ export default {
       status: 'sucess',
       posts: posts
     })
+  },
+  create: async function (req, res) {
+    let post = req.body
+    try {
+      let createdPost = await Post.create(post)
+      res.send({
+        status: 'success',
+        post: createdPost
+      })
+    } catch (e) {
+      console.log(e)
+    }
   }
 }
