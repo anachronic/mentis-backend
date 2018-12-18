@@ -1,11 +1,13 @@
 import { mongo } from '../db'
 
-let PostSchema = new mongo.Schema({
+const Schema = mongo.Schema
+
+let schema = new Schema({
   title: String,
-  author: String,
+  author: { type: Schema.Types.ObjectId, ref: 'Author' },
   content: String
+}, {
+  timestamps: true
 })
 
-let Post = mongo.model('Post', PostSchema)
-
-export default Post
+export default mongo.model('Post', schema)
