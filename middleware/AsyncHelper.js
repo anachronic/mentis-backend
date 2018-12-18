@@ -1,5 +1,10 @@
 export default (fn) => {
-  return (...args) => {
-    fn(...args).catch(args[2])
+  return (req, res) => {
+    fn(req, res).catch((err) => {
+      res.send({
+        status: 'error',
+        message: err.message
+      })
+    })
   }
 }

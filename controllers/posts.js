@@ -10,14 +10,10 @@ export default {
   },
   create: async function (req, res) {
     let post = req.body
-    try {
-      let createdPost = await Post.create(post)
-      res.send({
-        status: 'success',
-        post: createdPost
-      })
-    } catch (e) {
-      throw new Error('SADHASKJDA')
-    }
+    let createdPost = await Post.create(post)
+    res.send({
+      status: 'success',
+      post: createdPost
+    })
   }
 }
