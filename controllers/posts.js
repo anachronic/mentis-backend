@@ -17,7 +17,7 @@ export default {
         post: createdPost
       })
     } catch (e) {
-      console.log(e)
+      throw new Error('SADHASKJDA')
     }
   }
 }
