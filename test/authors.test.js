@@ -1,8 +1,8 @@
 import Author from '../models/Author'
 import { expect } from 'chai'
 
-describe('Author', () => {
-  describe('#create', () => {
+describe('Author', function () {
+  describe('#create', function () {
     it('should create ok with name and biography', async function () {
       let expectedName = 'jperez'
       let expectedBio = 'just another brick in the wall'
