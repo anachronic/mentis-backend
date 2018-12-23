@@ -34,5 +34,18 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "controllers/*.js",
+      "models/*.js",
+      "middleware/*.js",
+      "routes.js"
+    ],
+    "exclude": [
+      "db.js",
+      "config.js"
+    ]
   }
 }
