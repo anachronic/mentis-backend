@@ -1,4 +1,4 @@
-# Backend for mentis
+# Backend for mentis [![CircleCI](https://circleci.com/gh/anachronic/mentis-backend.svg?style=svg)](https://circleci.com/gh/anachronic/mentis-backend)
 
 This is a toy project that I created to learn the javascript environment. It
 will consist of a blog with markdown support. This repository contains the
