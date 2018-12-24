@@ -9,11 +9,16 @@ const db = require('./db').db
 const server = express()
 
 server.use(cors())
-server.use(morgan('tiny'))
 server.use(bodyParser.json())
+
+if (process.env.NODE_ENV !== 'test') {
+  server.use(morgan('tiny'))
+}
 
 routes(server)
 
 db.once('open', () => {
   server.listen(process.env.PORT || 3000)
 })
+
+module.exports = server
