@@ -8,6 +8,6 @@ module.exports = (express) => {
   express.post('/posts', asyncHelper(PostsController.create))
 
   express.post('/author',
-    asyncHelper(AuthorValidator.validate),
+    AuthorValidator.validate,
     asyncHelper(AuthorController.create))
 }

@@ -1,7 +1,7 @@
 const joi = require('joi')
 
 module.exports = {
-  async validate (req, res, next) {
+  validate (req, res, next) {
     const schema = joi.object().keys({
       name: joi.string().required().trim(),
       biography: joi.string()
