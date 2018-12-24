@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import config from './config'
+const mongoose = require('mongoose')
+const config = require('./config')
 
 mongoose.connect(config.db.uri, { useNewUrlParser: true })
 
@@ -9,5 +9,7 @@ db.on('error', error => {
   process.exit(1)
 })
 
-export default db
-export { mongoose as mongo }
+module.exports = {
+  db: db,
+  mongo: mongoose
+}

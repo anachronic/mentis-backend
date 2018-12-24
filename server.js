@@ -1,10 +1,10 @@
-import express from 'express'
-import cors from 'cors'
-import morgan from 'morgan'
-import bodyParser from 'body-parser'
+const express = require('express')
+const cors = require('cors')
+const morgan = require('morgan')
+const bodyParser = require('body-parser')
 
-import routes from './routes'
-import db from './db'
+const routes = require('./routes')
+const db = require('./db').db
 
 const server = express()
 

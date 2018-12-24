@@ -1,6 +1,6 @@
-import { Post } from '../models'
+const Post = require('../models/Post')
 
-export default {
+module.exports = {
   getAll: async function (req, res) {
     let posts = await Post.find()
     res.send({

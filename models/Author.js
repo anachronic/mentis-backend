@@ -1,5 +1,5 @@
-import { mongo } from '../db'
-import Post from './Post'
+const mongo = require('../db').mongo
+const Post = require('./Post')
 
 const Schema = mongo.Schema
 
@@ -16,4 +16,4 @@ schema.statics.deleteByName = async function (name) {
   await this.deleteOne({ _id: author._id }).exec()
 }
 
-export default mongo.model('Author', schema)
+module.exports = mongo.model('Author', schema)

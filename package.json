@@ -4,18 +4,13 @@
   "description": "A backend server for a mentis blog webapp",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js --exec 'npm run lint && babel-node --inspect'",
+    "start": "nodemon server.js --exec 'npm run lint && node --inspect'",
     "lint": "eslint --ignore-path .gitignore .",
-    "test": "mocha --require @babel/register --require @babel/polyfill --exit"
+    "test": "mocha --exit"
   },
   "author": "Nicolás Salas V.",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
@@ -28,7 +23,6 @@
     "nyc": "^13.1.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",

@@ -1,6 +1,6 @@
-import { Author } from '../models'
+const Author = require('../models/Author')
 
-export default {
+module.exports = {
   create: async function (req, res) {
     let author = req.body
     author['posts'] = []

@@ -5,4 +5,4 @@ class RuntimeError extends Error {
   }
 }
 
-export default RuntimeError
+module.exports = RuntimeError

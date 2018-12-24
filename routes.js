@@ -1,8 +1,8 @@
-import PostsController from './controllers/PostsController'
-import AuthorController from './controllers/AuthorController'
-import asyncHelper from './middleware/AsyncHelper'
+const PostsController = require('./controllers/PostsController')
+const AuthorController = require('./controllers/AuthorController')
+const asyncHelper = require('./middleware/AsyncHelper')
 
-export default (express) => {
+module.exports = (express) => {
   express.get('/posts', asyncHelper(PostsController.getAll))
   express.post('/posts', asyncHelper(PostsController.create))
 

@@ -1,4 +1,4 @@
-import { mongo } from '../db'
+const mongo = require('../db').mongo
 
 const Schema = mongo.Schema
 
@@ -10,4 +10,4 @@ let schema = new Schema({
   timestamps: true
 })
 
-export default mongo.model('Post', schema)
+module.exports = mongo.model('Post', schema)

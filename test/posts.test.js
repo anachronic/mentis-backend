@@ -1,6 +1,6 @@
-import Author from '../models/Author'
-import Post from '../models/Post'
-import { expect } from 'chai'
+const Author = require('../models/Author')
+const Post = require('../models/Post')
+const expect = require('chai').expect
 
 var author
 

@@ -1,7 +1,7 @@
-import Post from './Post'
-import Author from './Author'
+const Post = require('./Post')
+const Author = require('./Author')
 
-export {
+module.exports = {
   Post,
   Author
 }
