@@ -69,5 +69,19 @@ describe('Route testing', function () {
           done()
         })
     })
+
+    it('will not suceed with a fully trim-able author name', function (done) {
+      chai.request(server)
+        .post('/author')
+        .send({
+          name: '   '
+        })
+        .end(function (err, res) {
+          expect(err).to.be.null
+          expect(res).to.be.json
+          expect(res).to.have.status(400)
+          done()
+        })
+    })
   })
 })
