@@ -13,6 +13,8 @@ server.use(bodyParser.json())
 
 if (process.env.NODE_ENV !== 'test') {
   server.use(morgan('tiny'))
+} else {
+  process.env.PORT = 8400
 }
 
 routes(server)

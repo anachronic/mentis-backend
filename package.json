@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js --exec 'npm run lint && node --inspect'",
     "lint": "eslint --ignore-path .gitignore .",
-    "test": "mocha --exit"
+    "test": "NODE_ENV=test mocha --exit"
   },
   "author": "Nicolás Salas V.",
   "license": "MIT",
