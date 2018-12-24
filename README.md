@@ -1,4 +1,4 @@
-# Backend for mentis [![CircleCI](https://circleci.com/gh/anachronic/mentis-backend.svg?style=svg)](https://circleci.com/gh/anachronic/mentis-backend)
+# Backend for mentis [![CircleCI](https://circleci.com/gh/anachronic/mentis-backend.svg?style=svg)](https://circleci.com/gh/anachronic/mentis-backend) [![Coverage Status](https://coveralls.io/repos/github/anachronic/mentis-backend/badge.svg)](https://coveralls.io/github/anachronic/mentis-backend)
 
 This is a toy project that I created to learn the javascript environment. It
 will consist of a blog with markdown support. This repository contains the
@@ -13,12 +13,17 @@ to testing. Fortunately, my experience so far at the time I'm editing this
 has been wonderful. I want to set up CI and coverage properly, and write
 robust Javascript code that has a good coverage percentage.
 
-## Tools used
+## Javascript Tools used
 
 - [Express](https://expressjs.com)
 - [Mocha](https://mochajs.org)
 - [Chai](https://chaijs.com) with [Chai-HTTP](https://www.chaijs.com/plugins/chai-http/)
 - [Istanbul](https://istanbul.js.org)
+
+## External tools used
+
+- [CircleCI](https://circleci.com)
+- [Coveralls](https://coveralls.io)
 
 ## Running
 

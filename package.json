@@ -6,13 +6,15 @@
   "scripts": {
     "start": "nodemon server.js --exec 'npm run lint && node --inspect'",
     "lint": "eslint --ignore-path .gitignore .",
-    "test": "NODE_ENV=test mocha --exit"
+    "test": "NODE_ENV=test mocha --exit",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Nicolás Salas V.",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
