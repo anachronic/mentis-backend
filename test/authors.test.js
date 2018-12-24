@@ -23,33 +23,37 @@ describe('Author', function () {
     describe('#delete', function () {
       it('should erase all author\'s posts when deleting the author', async function () {
         let author = await Author.create({
-          'name': expectedName,
-          'biography': expectedBio
+          'name': 'yei perez',
+          'biography': 'with another biography'
         })
 
         let postOne = await Post.create({
           title: 'title for post one',
-          content: 'the content for post one'
+          content: 'the content for post one',
+          author: author._id
         })
 
         let postTwo = await Post.create({
-          title: 'title for post one',
-          content: 'the content for post one'
+          title: 'title for post two',
+          content: 'the content for post two',
+          author: author._id
         })
 
         let authorId = author._id
+        let authorName = author.name
         let postIds = [postOne._id, postTwo._id]
 
-        await Author.remove({ _id: authorId })
+        await Author.deleteByName(authorName)
 
-        let foundAuthor = await Author.findOne({ _id: authorId })
+        let foundAuthor = await Author.findById(authorId).exec()
+        console.log(foundAuthor)
         expect(foundAuthor).to.be.null
 
         let foundPosts = await Post.find({
           _id: {
             $in: postIds
           }
-        })
+        }).exec()
         expect(foundPosts).to.be.empty
       })
     })
