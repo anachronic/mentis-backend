@@ -1,4 +1,5 @@
 import { mongo } from '../db'
+import Post from './Post'
 
 const Schema = mongo.Schema
 
@@ -7,5 +8,12 @@ let schema = new Schema({
   posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
   biography: { type: String, required: false }
 })
+
+schema.statics.deleteByName = async function (name) {
+  let author = await this.findOne({ name: name }).lean().exec()
+
+  await Post.deleteMany({ author: author._id }).exec()
+  await this.deleteOne({ _id: author._id }).exec()
+}
 
 export default mongo.model('Author', schema)
