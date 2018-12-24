@@ -7,7 +7,7 @@ module.exports = {
     let createdAuthor = await Author.create(author)
     res.send({
       status: 'success',
-      post: createdAuthor
+      post: createdAuthor.toObject()
     })
   }
 }
