@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 const routes = require('./routes')
 const db = require('./db').db
+const responseHelper = require('./helpers/ResponseHelper')
 
 const server = express()
 
@@ -18,6 +19,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 routes(server)
+server.use(responseHelper.httpErrorHandler)
 
 db.once('open', () => {
   server.listen(process.env.PORT || 3000)
