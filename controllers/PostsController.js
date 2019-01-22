@@ -1,5 +1,5 @@
 const Post = require('../models/Post')
-const { NotFoundError, BadRequestError } = require('../exceptions')
+const { NotFoundError } = require('../exceptions')
 
 module.exports = {
   getAll: async function (req, res) {
@@ -19,11 +19,9 @@ module.exports = {
   },
   getSingle: async function (req, res) {
     let id
-    try {
-      id = req.params.id
-    } catch (err) {
-      throw new BadRequestError('Request did not contain a query for the post')
-    }
+    // this doesn't need to be try/catch'd because if there's no params
+    // we'd end up in /posts route
+    id = req.params.id
 
     try {
       let post = await Post.findById(id).lean().exec()
